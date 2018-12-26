@@ -3,8 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import ajax from './axios'
 
 Vue.config.productionTip = false
+
+Object.assign(Vue.prototype,ajax);
 
 /* eslint-disable no-new */
 new Vue({
