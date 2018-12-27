@@ -4,10 +4,14 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import ajax from './axios'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.config.productionTip = false
 
 Object.assign(Vue.prototype,ajax);
+let arr = [ElementUI];
+Vue.use(...arr);
 
 /* eslint-disable no-new */
 new Vue({
