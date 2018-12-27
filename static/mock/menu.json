@@ -1,0 +1,23 @@
+  {
+    "code":"000000",
+    "msg":"登陆成功",
+    "data":{
+        "menu":[
+          {
+            "id":"01",
+            "path": "",
+            "text": "系统设置",
+            "icon":"el-icon-setting",
+            "children": [
+              {
+                "id":"0101",
+                "path": "dashboard",
+                "text": "数据可视化",
+                "icon":"",
+                "children": []
+              }
+            ]
+          }
+        ]
+    }
+}
