@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Dashboard from '@/page/Dashboard'
+import Staff from '@/page/Staff'
+import Role from '@/page/Role'
+import Page from '@/page/Page'
+import Dictionary from '@/page/Dictionary'
 import Layout from '@/page/Layout'
 import lyx from './basic'
 
@@ -16,14 +19,50 @@ let routes = [
         },
         children: [
             {
-                path: 'dashboard',
-                name: 'Dashboard',
-                component: Dashboard,
+                path: 'staff',
+                name: 'Staff',
+                component: Staff,
                 meta: {
-                    title: '数据可视化',
+                    title: '员工',
                     requireAuth: true
                 },
-            }
+            },
+            {
+                path: 'role',
+                name: 'Role',
+                component: Role,
+                meta: {
+                    title: '角色',
+                    requireAuth: true
+                },
+            },
+            {
+                path: 'role',
+                name: 'Role',
+                component: Role,
+                meta: {
+                    title: '角色',
+                    requireAuth: true
+                },
+            },
+            {
+                path: 'page',
+                name: 'Page',
+                component: Page,
+                meta: {
+                    title: '页面',
+                    requireAuth: true
+                },
+            },
+            {
+                path: 'dictionary',
+                name: 'Dictionary',
+                component: Dictionary,
+                meta: {
+                    title: '字典',
+                    requireAuth: true
+                },
+            },
         ]
     }
 ]
