@@ -1,8 +1,20 @@
 <template>
   <div class="layout">
-    <div class="head">头部</div>
+    <div class="head"></div>
     <div class="body">
-      <div class="menu">菜单</div>
+      <el-menu
+          default-active="1"
+          class="el-menu-vertical-demo menu">
+          <el-submenu :index="item.id" v-for="(item,index) in menu" :key="index">
+            <template slot="title">
+              <i :class="item.icon"></i>
+              <span><router-link :to="item.path">{{item.text}}</router-link></span>
+            </template>
+            <el-menu-item :index="item.id" v-for="(item,index) in item.children" :key="index">
+              <span slot="title"><router-link :to="item.path">{{item.text}}</router-link></span>
+            </el-menu-item>
+          </el-submenu>
+        </el-menu>
       <div class="content"><router-view/></div>
     </div>
   </div>
@@ -13,9 +25,16 @@ export default {
   name: "Layout",
   data() {
     return {
-      title: "布局"
+      menu: []
     };
-  }
+  },
+  created() {
+    let vm = this;
+    vm.get("menu.json", vm.user).then(data => {
+      vm.menu = data.menu;
+    });
+  },
+  methods: {}
 };
 </script>
 
@@ -23,7 +42,7 @@ export default {
 <style scoped>
 .layout {
 }
-.body{
+.body {
   display: flex;
 }
 .head {
@@ -31,13 +50,14 @@ export default {
   line-height: 56px;
   background-color: lightskyblue;
 }
-.body>.menu{
-  width:200px;
-  background-color:lightcyan;
-  height:calc(100vh - 56px);
+.body > .menu {
+  width: 200px;
+  background-color: lightcyan;
+  height: calc(100vh - 56px);
 }
-.body>.content{
-  flex:1;
-  height:calc(100vh - 56px);
+.body > .content {
+  flex: 1;
+  height: calc(100vh - 56px);
+  padding: 10px 15px;
 }
 </style>
