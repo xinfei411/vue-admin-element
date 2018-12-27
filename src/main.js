@@ -10,8 +10,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 Vue.config.productionTip = false
 
 Object.assign(Vue.prototype,ajax);
-let arr = [ElementUI];
-Vue.use(...arr);
+Vue.use(ElementUI, { size: 'small'});
 
 /* eslint-disable no-new */
 new Vue({
