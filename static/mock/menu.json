@@ -1,23 +1,44 @@
   {
-    "code":"000000",
-    "msg":"登陆成功",
-    "data":{
-        "menu":[
-          {
-            "id":"01",
-            "path": "",
-            "text": "系统设置",
-            "icon":"el-icon-setting",
-            "children": [
-              {
-                "id":"0101",
-                "path": "dashboard",
-                "text": "数据可视化",
-                "icon":"",
-                "children": []
-              }
-            ]
-          }
-        ]
+    "code": "000000",
+    "msg": "登陆成功",
+    "data": {
+      "menu": [
+        {
+          "id": "01",
+          "path": "",
+          "text": "系统设置",
+          "icon": "el-icon-setting",
+          "children": [
+            {
+              "id": "0101",
+              "path": "staff",
+              "text": "员工",
+              "icon": "",
+              "children": []
+            },
+            {
+              "id": "0102",
+              "path": "role",
+              "text": "角色",
+              "icon": "",
+              "children": []
+            },
+            {
+              "id": "0103",
+              "path": "page",
+              "text": "页面",
+              "icon": "",
+              "children": []
+            },
+            {
+              "id": "0104",
+              "path": "dictionary",
+              "text": "字典",
+              "icon": "",
+              "children": []
+            }
+          ]
+        }
+      ]
     }
-}
+  }

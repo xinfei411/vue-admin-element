@@ -41,7 +41,7 @@ export default {
         if(!valid) return;
         vm.get("login.json", vm.user).then(data => {
           localStorage.token = data.token;
-          vm.$router.push("dashboard");
+          vm.$router.push("staff");
         });
       })
     }

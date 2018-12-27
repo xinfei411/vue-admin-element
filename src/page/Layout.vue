@@ -1,6 +1,9 @@
 <template>
   <div class="layout">
-    <div class="head"></div>
+    <div class="head">
+      <div class="logo">玄机管理系统</div>
+      <div class="other"></div>
+    </div>
     <div class="body">
       <el-menu
           default-active="1"
@@ -45,11 +48,6 @@ export default {
 .body {
   display: flex;
 }
-.head {
-  height: 56px;
-  line-height: 56px;
-  background-color: lightskyblue;
-}
 .body > .menu {
   width: 200px;
   background-color: lightcyan;
@@ -59,5 +57,19 @@ export default {
   flex: 1;
   height: calc(100vh - 56px);
   padding: 10px 15px;
+}
+.head {
+  display: flex;
+  height: 56px;
+  line-height: 56px;
+  background-color: lightskyblue;
+}
+.head>.logo{
+  width: 200px;
+  font-size: 20px;
+  text-align: center;
+}
+.head>.other{
+  flex: 1;
 }
 </style>
