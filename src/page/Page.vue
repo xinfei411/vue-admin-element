@@ -1,5 +1,5 @@
 <template>
-  <div class="dashboard">
+  <div class="page">
     {{ title }}
     
   </div>
@@ -7,10 +7,10 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Page',
   data () {
     return {
-      title: '数据可视化'
+      title: '页面'
     }
   }
 }
