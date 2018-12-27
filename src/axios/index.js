@@ -1,7 +1,8 @@
 //引入axios
 import axios from 'axios'
+import Vue from 'vue'
 
-let cancel, promiseArr = {}
+let cancel, promiseArr = {},loadingInstance
 const CancelToken = axios.CancelToken;
 //请求拦截器
 axios.interceptors.request.use(config => {
@@ -12,6 +13,7 @@ axios.interceptors.request.use(config => {
   } else {
     promiseArr[config.url] = cancel
   }
+  loadingInstance = Vue.prototype.$loading({ lock: true, text: 'Loading', background: 'rgba(0, 0, 0, 0.7)' });
   return config
 }, error => {
   return Promise.reject(error)
@@ -19,6 +21,7 @@ axios.interceptors.request.use(config => {
 
 //响应拦截器
 axios.interceptors.response.use(response => {
+  closeLoading();
   let resp=response.data
   if(resp.code=="000000"){
     return resp.data
@@ -26,6 +29,7 @@ axios.interceptors.response.use(response => {
     alert(resp.msg);
   }
 }, err => {
+  closeLoading();
   if (err && err.response) {
     switch (err.response.status) {
       case 400:
@@ -83,7 +87,14 @@ axios.defaults.headers = {
   'Authorization': localStorage.token,
 }
 axios.defaults.timeout = 10000
-
+function closeLoading(){
+  Vue.nextTick(function(){
+    let st = setTimeout(function(){
+      loadingInstance.close();
+      window.clearTimeout(st);
+    },1000);
+  });
+}
 export default {
   //get请求
   get(url, param) {
