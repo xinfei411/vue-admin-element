@@ -1,0 +1,64 @@
+  {
+    "code": "000000",
+    "msg": "登陆成功",
+    "data": {
+      "menu": [
+        {
+          "url": "",
+          "id": "3c778bc4-3254-4979-a545-341958e6c232",
+          "fa_id": "",
+          "text": "系统功能",
+          "icon": "icon-sys",
+          "state": "1",
+          "sort": "0",
+          "note": "备注",
+          "children": [
+            {
+              "url": "/Menu",
+              "id": "c314ce07-3336-4159-abc3-4822346114b3",
+              "fa_id": "3c778bc4-3254-4979-a545-341958e6c232",
+              "text": "菜单管理",
+              "icon": "icon-menu",
+              "state": "1",
+              "sort": "0",
+              "note": "备注",
+              "children": []
+            },
+            {
+              "url": "/DICT",
+              "id": "5eedc353-bff4-41d4-8bac-0662ef86bce4",
+              "fa_id": "3c778bc4-3254-4979-a545-341958e6c232",
+              "text": "数据字典",
+              "icon": "icon-dict",
+              "state": "1",
+              "sort": "1",
+              "note": "备注",
+              "children": []
+            },
+            {
+              "url": "/Role",
+              "id": "237d2eb8-a43e-44d0-b9fa-cf520b2afc77",
+              "fa_id": "3c778bc4-3254-4979-a545-341958e6c232",
+              "text": "角色管理",
+              "icon": "icon-role",
+              "state": "1",
+              "sort": "2",
+              "note": "备注",
+              "children": []
+            },
+            {
+              "url": "/Emp",
+              "id": "eb034f82-febe-467f-a413-3f1daa2afb33",
+              "fa_id": "3c778bc4-3254-4979-a545-341958e6c232",
+              "text": "操作员管理",
+              "icon": "icon-users",
+              "state": "1",
+              "sort": "3",
+              "note": "备注",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  }
