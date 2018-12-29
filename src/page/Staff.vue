@@ -69,6 +69,9 @@ export default {
       ]
     };
   },
+  mounted(){
+    this.getUser();//获取员工列表
+  },
   methods: {
     //获取用户信息
     getUser(){
