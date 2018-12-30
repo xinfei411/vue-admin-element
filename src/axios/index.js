@@ -92,7 +92,7 @@ function closeLoading(){
     let st = setTimeout(function(){
       loadingInstance.close();
       window.clearTimeout(st);
-    },1000);
+    },300);
   });
 }
 export default {

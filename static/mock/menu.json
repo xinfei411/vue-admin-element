@@ -5,34 +5,34 @@
       "menu": [
         {
           "id": "01",
-          "path": "",
+          "path": "/",
           "text": "系统设置",
           "icon": "el-icon-setting",
           "children": [
             {
               "id": "0101",
-              "path": "staff",
+              "path": "/staff",
               "text": "员工",
               "icon": "",
               "children": []
             },
             {
               "id": "0102",
-              "path": "role",
+              "path": "/role",
               "text": "角色",
               "icon": "",
               "children": []
             },
             {
               "id": "0103",
-              "path": "page",
+              "path": "/page",
               "text": "页面",
               "icon": "",
               "children": []
             },
             {
               "id": "0104",
-              "path": "dictionary",
+              "path": "/dictionary",
               "text": "字典",
               "icon": "",
               "children": []

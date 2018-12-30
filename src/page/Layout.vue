@@ -2,11 +2,16 @@
   <div class="layout">
     <div class="head">
       <div class="logo">玄机管理系统</div>
-      <div class="other"></div>
+      <div class="other">
+        <router-link to="resetPassword" tag="span">
+          <el-button>重置密码</el-button>
+        </router-link>
+        <el-button @click="exit">退出登录</el-button>
+      </div>
     </div>
     <div class="body">
       <el-menu
-          default-active="1"
+          unique-opened
           class="el-menu-vertical-demo menu"
           >
           <el-submenu :index="item.id" v-for="(item,index) in menu" :key="index">
@@ -38,7 +43,12 @@ export default {
       vm.menu = data.menu;
     });
   },
-  methods: {}
+  methods: {
+    exit(){
+      localStorage.clear()
+      location.reload();
+    }
+  }
 };
 </script>
 
@@ -71,5 +81,7 @@ export default {
 }
 .head>.other{
   flex: 1;
+  text-align: right;
+  padding: 0 15px;
 }
 </style>
