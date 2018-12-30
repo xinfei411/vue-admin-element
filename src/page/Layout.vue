@@ -7,14 +7,15 @@
     <div class="body">
       <el-menu
           default-active="1"
-          class="el-menu-vertical-demo menu">
+          class="el-menu-vertical-demo menu"
+          >
           <el-submenu :index="item.id" v-for="(item,index) in menu" :key="index">
             <template slot="title">
               <i :class="item.icon"></i>
-              <span><router-link :to="item.path">{{item.text}}</router-link></span>
+              <span><router-link :to="item.path" tag="span">{{item.text}}</router-link></span>
             </template>
             <el-menu-item :index="item.id" v-for="(item,index) in item.children" :key="index">
-              <span slot="title"><router-link :to="item.path">{{item.text}}</router-link></span>
+              <span slot="title"><router-link :to="item.path"  tag="span">{{item.text}}</router-link></span>
             </el-menu-item>
           </el-submenu>
         </el-menu>
@@ -50,7 +51,6 @@ export default {
 }
 .body > .menu {
   width: 200px;
-  background-color: lightcyan;
   height: calc(100vh - 56px);
 }
 .body > .content {

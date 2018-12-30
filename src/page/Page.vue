@@ -182,6 +182,18 @@ export default {
     vm.initIcon()
   },
   methods: {
+    resetForm(){
+      let vm = this
+      vm.form = {
+        fa_id:'',
+        url: "",
+        text: "",
+        icon: "",
+        state: "",
+        sort: "",
+        note: ""
+      }
+    },
     init() {
       let vm = this;
       vm.get("get_menu.json", vm.user).then(data => {
@@ -217,6 +229,7 @@ export default {
         delete dataCopy.children
         vm.form=dataCopy
       } else {//添加
+        vm.resetForm();
         vm.form.fa_id=data.id;
         vm.dialogTitle = "添加菜单"
       }

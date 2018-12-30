@@ -1,0 +1,21 @@
+{
+    "code":"000000",
+    "msg":"请求成功",
+    "data":{
+        "total":1,
+        "users":[
+            {
+                "id": "000001",
+                "createdate": "20171223",
+                "departid": "2",
+                "departname": "登记部",
+                "name": "陈明",
+                "note": "",
+                "phone": "18651647302",
+                "tel": "111",
+                "Role_id": "2f7aa2d4-4eda-45ec-9185-27f62c9b1474",
+                "Role_name": "最牛操作员"
+            }
+        ]
+    }
+}
