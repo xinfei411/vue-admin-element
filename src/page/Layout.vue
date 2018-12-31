@@ -14,14 +14,15 @@
           unique-opened
           :default-active="$route.path"
           class="el-menu-vertical-demo menu"
+          router
           >
           <el-submenu :index="item.path" v-for="(item,index) in menu" :key="index">
             <template slot="title">
               <i :class="item.icon"></i>
               <span><router-link :to="item.path" tag="span">{{item.text}}</router-link></span>
             </template>
-            <el-menu-item :index="item.path" v-for="(item,index) in item.children" :key="index">
-              <span slot="title"><router-link :to="item.path"  tag="span">{{item.text}}</router-link></span>
+            <el-menu-item :index="item.path" v-for="(item,index) in item.children" :key="index" :route="item">
+              <span slot="title">{{item.text}}</span>
             </el-menu-item>
           </el-submenu>
         </el-menu>
