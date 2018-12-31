@@ -84,7 +84,7 @@ axios.defaults.baseURL = '/static/mock/'
 //设置默认请求头
 axios.defaults.headers = {
   'X-Requested-With': 'XMLHttpRequest',
-  'Authorization': localStorage.token,
+  // 'Authorization': localStorage.token,
 }
 axios.defaults.timeout = 10000
 function closeLoading(){
@@ -113,6 +113,7 @@ export default {
   },
   //post请求
   post(url, param) {
+    Object.assign(param,{token:localStorage.token})
     return new Promise((resolve, reject) => {
       axios({
         method: 'post',
