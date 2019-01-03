@@ -196,7 +196,7 @@ export default {
     },
     init() {
       let vm = this;
-      vm.get("get_menu.json", vm.user).then(data => {
+      vm.get("get_menu.json", {}).then(data => {
         vm.menu = [
           {
             url: "路径",
