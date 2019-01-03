@@ -2,19 +2,27 @@
   <div class="layout">
     <div class="head">
       <div class="logo">玄机管理系统</div>
-      <div class="other"></div>
+      <div class="other">
+        <router-link to="resetPassword" tag="span">
+          <el-button>重置密码</el-button>
+        </router-link>
+        <el-button @click="exit">退出登录</el-button>
+      </div>
     </div>
     <div class="body">
       <el-menu
-          default-active="1"
-          class="el-menu-vertical-demo menu">
-          <el-submenu :index="item.id" v-for="(item,index) in menu" :key="index">
+          unique-opened
+          :default-active="$route.path"
+          class="el-menu-vertical-demo menu"
+          router
+          >
+          <el-submenu :index="item.path" v-for="(item,index) in menu" :key="index">
             <template slot="title">
               <i :class="item.icon"></i>
-              <span><router-link :to="item.path">{{item.text}}</router-link></span>
+              <span><router-link :to="item.path" tag="span">{{item.text}}</router-link></span>
             </template>
-            <el-menu-item :index="item.id" v-for="(item,index) in item.children" :key="index">
-              <span slot="title"><router-link :to="item.path">{{item.text}}</router-link></span>
+            <el-menu-item :index="item.path" v-for="(item,index) in item.children" :key="index" :route="item">
+              <span slot="title">{{item.text}}</span>
             </el-menu-item>
           </el-submenu>
         </el-menu>
@@ -37,7 +45,12 @@ export default {
       vm.menu = data.menu;
     });
   },
-  methods: {}
+  methods: {
+    exit(){
+      localStorage.clear()
+      location.reload();
+    }
+  }
 };
 </script>
 
@@ -50,7 +63,6 @@ export default {
 }
 .body > .menu {
   width: 200px;
-  background-color: lightcyan;
   height: calc(100vh - 56px);
 }
 .body > .content {
@@ -71,5 +83,7 @@ export default {
 }
 .head>.other{
   flex: 1;
+  text-align: right;
+  padding: 0 15px;
 }
 </style>

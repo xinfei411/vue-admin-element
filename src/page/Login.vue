@@ -25,14 +25,13 @@ export default {
     return {
       title: "欢迎登录",
       user: {
-        username: "ywq",
-        password: "123456"
+        username: "",
+        password: ""
       },
       rules: {
         username: [{ required: true, message: "请输入账号", trigger: "blur" }],
         password: [
           { required: true, message: "请输入密码", trigger: "blur" },
-          { min: 6, max: 12, message: "长度在 6 到 12 个字符", trigger: "blur" }
         ]
       }
     };
@@ -43,8 +42,8 @@ export default {
       vm.$refs[formName].validate((valid) => {
         if(!valid) return;
         vm.get("login.json", vm.user).then(data => {
-          localStorage.token = data.token;
-          vm.$router.push("staff");
+          localStorage.token = data.token
+          vm.$router.push(vm.$route.query.redirect||'/')
         });
       })
     }
@@ -64,10 +63,6 @@ export default {
   justify-content: center;
 }
 .login {
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   width: 400px;
   border: 1px solid #ccc;
   margin: auto;

@@ -194,4 +194,7 @@ export default {
   font-size: 14px;
   padding-right: 8px;
 }
+.el-button-group{
+  margin-bottom: 10px;
+}
 </style>

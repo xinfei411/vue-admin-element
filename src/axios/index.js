@@ -23,10 +23,10 @@ axios.interceptors.request.use(config => {
 axios.interceptors.response.use(response => {
   closeLoading();
   let resp=response.data
-  if(resp.code=="000000"){
-    return resp.data
+  if(resp.ret_code=="000000"){
+    return resp.ret_data
   }else{
-    alert(resp.msg);
+    alert(resp.ret_msg);
   }
 }, err => {
   closeLoading();
@@ -84,7 +84,7 @@ axios.defaults.baseURL = '/static/mock/'
 //设置默认请求头
 axios.defaults.headers = {
   'X-Requested-With': 'XMLHttpRequest',
-  'Authorization': localStorage.token,
+  // 'Authorization': localStorage.token,
 }
 axios.defaults.timeout = 10000
 function closeLoading(){
@@ -92,12 +92,13 @@ function closeLoading(){
     let st = setTimeout(function(){
       loadingInstance.close();
       window.clearTimeout(st);
-    },1000);
+    },300);
   });
 }
 export default {
   //get请求
   get(url, param) {
+    Object.assign(param,{token:localStorage.token})
     return new Promise((resolve, reject) => {
       axios({
         method: 'get',
@@ -113,6 +114,7 @@ export default {
   },
   //post请求
   post(url, param) {
+    Object.assign(param,{token:localStorage.token})
     return new Promise((resolve, reject) => {
       axios({
         method: 'post',
