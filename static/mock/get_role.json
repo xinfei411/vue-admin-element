@@ -1,7 +1,7 @@
   {
-    "code": "000000",
-    "msg": "登陆成功",
-    "data": {
+    "ret_code": "000000",
+    "ret_msg": "登陆成功",
+    "ret_data": {
       "role": [
         {
           "id": "95fde61c-466d-4695-bbc4-cd398e542e4f",

@@ -23,10 +23,10 @@ axios.interceptors.request.use(config => {
 axios.interceptors.response.use(response => {
   closeLoading();
   let resp=response.data
-  if(resp.code=="000000"){
-    return resp.data
+  if(resp.ret_code=="000000"){
+    return resp.ret_data
   }else{
-    alert(resp.msg);
+    alert(resp.ret_msg);
   }
 }, err => {
   closeLoading();
@@ -98,6 +98,7 @@ function closeLoading(){
 export default {
   //get请求
   get(url, param) {
+    Object.assign(param,{token:localStorage.token})
     return new Promise((resolve, reject) => {
       axios({
         method: 'get',

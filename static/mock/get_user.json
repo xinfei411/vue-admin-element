@@ -1,7 +1,7 @@
 {
-    "code":"000000",
-    "msg":"请求成功",
-    "data":{
+    "ret_code":"000000",
+    "ret_msg":"请求成功",
+    "ret_data":{
         "total":1,
         "users":[
             {
