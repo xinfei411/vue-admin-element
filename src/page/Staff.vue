@@ -55,7 +55,14 @@
           <el-input v-model="form.name"></el-input>
         </el-form-item>
         <el-form-item label="角色">
-          <el-input v-model="form.Role_name"></el-input>
+          <el-select v-model="form.Role_id" placeholder="请选择">
+            <el-option
+              v-for="item in role"
+              :key="item.id"
+              :label="item.name"
+              :value="item.id">
+            </el-option>
+          </el-select>
         </el-form-item>
         <el-form-item label="手机号码">
           <el-input v-model="form.phone"></el-input>
@@ -100,6 +107,7 @@ export default {
         Role_id: "",
         Role_name: ""
       },
+      role:[],
       departnames:[
         {
           label:"登记部",
@@ -115,6 +123,7 @@ export default {
   created(){
     let vm = this
     vm.goPage(vm.page.page_index);
+    vm.getRole();//获取角色
   },
   mounted(){
   },
@@ -159,7 +168,6 @@ export default {
       });
     },
     append(data){
-      console.log(data)
       let vm = this
       if(data){//编辑
         vm.dialogTitle = "编辑员工信息"
@@ -183,11 +191,17 @@ export default {
       let vm = this;
       //TODO:
       //要支持删除多个员工
-      ajax.post(deleteUrl,{user_ids:[row.id]}).then(resp=>{
+      vm.get("del_user.json",{user_ids:[row.id]}).then(resp=>{
         vm.$message({
           message: '恭喜你，这是一条成功消息',
           type: 'success'
         });
+      });
+    },
+    getRole(){
+      let vm = this;
+      vm.get("get_role.json",{}).then(resp=>{
+        vm.role = resp.role;
       });
     },
     handleSizeChange(val) {
