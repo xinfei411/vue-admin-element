@@ -2,7 +2,7 @@
   <div class="staff">
     <div class="top">
       <div class="action">
-        <el-button type="primary" @click="append('')">新增</el-button>
+        <el-button @click="append('')">新增</el-button>
       </div>
       <div class="search">
         <el-input placeholder="请输入内容" prefix-icon="el-icon-search" v-model="searchText"></el-input>

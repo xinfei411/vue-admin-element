@@ -16,12 +16,12 @@
           class="el-menu-vertical-demo menu"
           router
           >
-          <el-submenu :index="item.path" v-for="(item,index) in menu" :key="index">
+          <el-submenu :index="item.url" v-for="(item,index) in menu" :key="index">
             <template slot="title">
               <i :class="item.icon"></i>
-              <span><router-link :to="item.path" tag="span">{{item.text}}</router-link></span>
+              <span><router-link :to="item.url" tag="span">{{item.text}}</router-link></span>
             </template>
-            <el-menu-item :index="item.path" v-for="(item,index) in item.children" :key="index" :route="item">
+            <el-menu-item :index="item.url" v-for="(item,index) in item.children" :key="index" :to="item.url">
               <span slot="title">{{item.text}}</span>
             </el-menu-item>
           </el-submenu>
@@ -41,7 +41,7 @@ export default {
   },
   created() {
     let vm = this;
-    vm.get("menu.json", vm.user).then(data => {
+    vm.get("get_user_menu.json", {}).then(data => {
       vm.menu = data.menu;
     });
   },

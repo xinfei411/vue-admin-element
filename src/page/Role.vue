@@ -2,9 +2,9 @@
   <div class="role">
     <div class="left">
       <el-button-group>
-        <el-button type="primary" @click="append">新增</el-button>
-        <el-button type="primary" @click="append('edit')" v-if="currentRow">修改</el-button>
-        <el-button type="primary" @click="remove" v-if="currentRow">删除</el-button>
+        <el-button @click="append">新增</el-button>
+        <el-button @click="append('edit')" v-if="currentRow">修改</el-button>
+        <el-button @click="remove" v-if="currentRow">删除</el-button>
       </el-button-group>
       <el-table
         ref="singleTable"
@@ -24,9 +24,9 @@
     </div>
     <div class="right">
       <el-button-group>
-        <el-button type="primary" @click="save">保存权限</el-button>
-        <el-button type="primary" @click="openAll(true)">全部展开</el-button>
-        <el-button type="primary" @click="openAll(false)">全部折叠</el-button>
+        <el-button @click="save">保存权限</el-button>
+        <el-button @click="openAll(true)">全部展开</el-button>
+        <el-button @click="openAll(false)">全部折叠</el-button>
       </el-button-group>
       <el-tree
       ref="tree"
@@ -101,7 +101,7 @@ export default {
       vm.get("get_role.json", {}).then(data => {
         vm.role = data.role;
       });
-      vm.get("get_menu.json", vm.user).then(data => {
+      vm.get("get_menu.json", {}).then(data => {
         vm.menu = data.menu;
       });
     },
