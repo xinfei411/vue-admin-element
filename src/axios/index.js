@@ -80,7 +80,7 @@ axios.interceptors.response.use(response => {
   return Promise.resolve(err.response)
 })
 
-axios.defaults.baseURL = '/static/mock/'
+axios.defaults.baseURL = '/we_admin/static/mock/'
 //设置默认请求头
 axios.defaults.headers = {
   'X-Requested-With': 'XMLHttpRequest',
