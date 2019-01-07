@@ -2,7 +2,7 @@
   <div class="login-box">
     <div class="resetPassword">
       <h2>{{ title }}</h2>
-      <el-form :model="user" :rules="rules" ref="user" label-width="100px">
+      <el-form :model="user" :rules="rules" ref="user" label-width="120px">
         <el-form-item label="旧密码" prop="password_o">
           <el-input v-model="user.password_o" type="password"></el-input>
         </el-form-item>

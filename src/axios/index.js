@@ -26,7 +26,10 @@ axios.interceptors.response.use(response => {
   if(resp.ret_code=="000000"){
     return resp.ret_data
   }else{
-    alert(resp.ret_msg);
+    Vue.prototype.$message({
+      type: 'error',
+      message: resp.ret_msg||'请求错误,未找到该资源'
+    });
   }
 }, err => {
   closeLoading();
@@ -76,11 +79,14 @@ axios.interceptors.response.use(response => {
   } else {
     err.message = "连接到服务器失败"
   }
-  alert(err.message)
+  Vue.prototype.$message({
+    type: 'error',
+    message: err.message
+  });
   return Promise.resolve(err.response)
 })
 
-axios.defaults.baseURL = '/static/mock/'
+axios.defaults.baseURL = '/we_admin/static/mock/'
 //设置默认请求头
 axios.defaults.headers = {
   'X-Requested-With': 'XMLHttpRequest',

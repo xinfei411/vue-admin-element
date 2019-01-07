@@ -2,7 +2,7 @@
   <div class="login-box">
     <div class="login">
       <h2>{{ title }}</h2>
-      <el-form :model="user" :rules="rules" ref="user" label-width="50px">
+      <el-form :model="user" :rules="rules" ref="user" label-width="80px">
         <el-form-item label="账号" prop="username">
           <el-input v-model="user.username"></el-input>
         </el-form-item>
