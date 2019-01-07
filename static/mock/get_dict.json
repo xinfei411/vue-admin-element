@@ -1,0 +1,15 @@
+{
+    "ret_code":"000000",
+    "ret_msg":"请求成功",
+    "ret_data":{
+        "page":{
+            "page_i":0,
+            "page_size":10,
+            "total":2       
+        },
+        "dict":[
+                {"type":"000000","data":"000001","name":"性别","note":"","sort":"0"},
+                {"type":"000000","data":"000002","name":"部门","note":"","sort":"1"}
+            ]
+    }
+}
