@@ -37,15 +37,6 @@ let routes = [
                 },
             },
             {
-                path: 'role',
-                name: 'Role',
-                component: Role,
-                meta: {
-                    title: '角色',
-                    requireAuth: true
-                },
-            },
-            {
                 path: 'page',
                 name: 'Page',
                 component: Page,
