@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <div class="head">
-      <div class="logo">玄机管理系统</div>
+      <div class="logo">WeMust综合信息管理系统</div>
       <div class="other">
         <router-link to="resetPassword" tag="span">
           <el-button>重置密码</el-button>
@@ -62,7 +62,7 @@ export default {
   display: flex;
 }
 .body > .menu {
-  width: 200px;
+  width: 240px;
   height: calc(100vh - 56px);
 }
 .body > .content {
@@ -77,8 +77,8 @@ export default {
   background-color: lightskyblue;
 }
 .head>.logo{
-  width: 200px;
-  font-size: 20px;
+  width: 240px;
+  font-size: 18px;
   text-align: center;
 }
 .head>.other{
