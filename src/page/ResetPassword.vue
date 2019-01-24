@@ -10,7 +10,7 @@
           <el-input v-model="user.password" type="password"></el-input>
         </el-form-item>
         <el-form-item label="确认密码" prop="password1">
-          <el-input v-model="user.password1" type="password"></el-input>
+          <el-input v-model="user.password1" type="password" @keyup.native.enter="sure('user')"></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="sure('user')">确定</el-button>
