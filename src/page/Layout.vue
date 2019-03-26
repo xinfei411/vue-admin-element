@@ -19,7 +19,7 @@
           <el-submenu :index="item.url" v-for="(item,index) in menu" :key="index">
             <template slot="title">
               <i :class="item.icon"></i>
-              <span><router-link :to="item.url" tag="span">{{item.text}}</router-link></span>
+              <span>{{item.text}}</span>
             </template>
             <el-menu-item :index="item.url" v-for="(item,index) in item.children" :key="index" :to="item.url">
               <span slot="title">{{item.text}}</span>

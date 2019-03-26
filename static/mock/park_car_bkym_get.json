@@ -1,0 +1,24 @@
+{
+	"ret_code":"000000",
+	"ret_msg":"请求成功",
+	"ret_data":{
+		"park_car_bkym":[
+			{
+				"merchant_id": "wemust_mengzheng",
+				"car_id":"苏AK3X91",
+				"s_date":"20190228",
+				"e_date":"20200228",
+				"fee":"2500",
+				"record":"小明的车"
+			},
+			{
+				"merchant_id": "wemust_mengzheng",
+				"car_id":"苏AK3X92",
+				"s_date":"20190228",
+				"e_date":"20200228",
+				"fee":"2500",
+				"record":"小红的车"
+			}
+		]
+	}
+}

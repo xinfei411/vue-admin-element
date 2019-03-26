@@ -1,0 +1,19 @@
+{
+	"ret_code":"000000",
+	"ret_msg":"请求成功",
+	"ret_data":{
+		"park_car_flow":[
+			{
+				"merchant_id": "wemust_mengzheng",
+				"car_id":"苏AK3X91",
+				"cups_no":"AK3X91,20181120000000002A",
+				"state":"03",
+				"in_time":"2019-02-28 00:00:00",
+				"out_time":"2019-02-29 00:00:00",
+				"amount":"20",
+				"merchant_name":"大厂蒙正文化停车场",
+				"pay_time":"2019-02-29 00:00:00"
+			}
+		]
+	}
+}
