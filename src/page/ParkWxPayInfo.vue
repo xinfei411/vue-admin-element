@@ -29,7 +29,7 @@
       :total="page.total"
       class="pagination"></el-pagination>
     <el-dialog :title="dialogTitle" :visible.sync="dialogFormVisible" width="200px;">
-      <el-form :model="form" ref="form" label-width="80px">
+      <el-form :model="form" ref="form" label-width="110px">
         <el-form-item label="商户编号" prop="merchant_id">
           <el-input v-model="form.merchant_id" :disabled="true"></el-input>
         </el-form-item>

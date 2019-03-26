@@ -37,10 +37,10 @@
           <el-input v-model="form.car_id"></el-input>
         </el-form-item>
         <el-form-item label="开始日期" prop="s_date">
-          <el-input v-model="form.s_date"></el-input>
+          <el-date-picker v-model="form.s_date" type="date" placeholder="选择日期" value-format="yyyyMMdd"></el-date-picker>
         </el-form-item>
         <el-form-item label="结束日期" prop="e_date">
-          <el-input v-model="form.e_date"></el-input>
+          <el-date-picker v-model="form.e_date" type="date" placeholder="选择日期" value-format="yyyyMMdd"></el-date-picker>
         </el-form-item>
         <el-form-item label="收费金额" prop="fee">
           <el-input v-model="form.fee"></el-input>

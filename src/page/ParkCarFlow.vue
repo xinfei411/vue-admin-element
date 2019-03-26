@@ -7,16 +7,16 @@
         <el-input placeholder="请输入搜索内容（全字段模糊匹配）" prefix-icon="el-icon-search" v-model="searchText"  @keyup.native.enter="goPage(1)"></el-input>
       </div>
     </div>
-    <el-table :data="tableData" border style="flex:1" class="center" height="calc(100% - 84px)">
-      <el-table-column prop="merchant_id" label="商户编号"></el-table-column>
-      <el-table-column prop="merchant_name" label="商户名称" ></el-table-column>
-      <el-table-column prop="car_id" label="车牌" ></el-table-column>
-      <el-table-column prop="cups_no" label="交易流水" ></el-table-column>
-      <el-table-column prop="state" label="状态" ></el-table-column>
-      <el-table-column prop="in_time" label="进场时间" ></el-table-column>
-      <el-table-column prop="out_time" label="出场时间" ></el-table-column>
-      <el-table-column prop="amount" label="收费金额" ></el-table-column>
-      <el-table-column prop="pay_time" label="缴费时间" ></el-table-column>
+    <el-table :data="tableData" border style="width:calc(100vw - 270px)" class="center" height="calc(100% - 84px)">
+      <el-table-column prop="merchant_id" label="商户编号" width="160px" show-overflow-tooltip fixed></el-table-column>
+      <el-table-column prop="merchant_name" label="商户名称" width="160px" show-overflow-tooltip fixed></el-table-column>
+      <el-table-column prop="car_id" label="车牌" width="160px" show-overflow-tooltip></el-table-column>
+      <el-table-column prop="cups_no" label="交易流水" width="160px" show-overflow-tooltip></el-table-column>
+      <el-table-column prop="state" label="状态" width="160px" show-overflow-tooltip></el-table-column>
+      <el-table-column prop="in_time" label="进场时间" width="160px" show-overflow-tooltip></el-table-column>
+      <el-table-column prop="out_time" label="出场时间" width="160px" show-overflow-tooltip></el-table-column>
+      <el-table-column prop="amount" label="收费金额" width="160px" show-overflow-tooltip></el-table-column>
+      <el-table-column prop="pay_time" label="缴费时间" width="160px" show-overflow-tooltip></el-table-column>
     </el-table>
     <el-pagination
       @size-change="handleSizeChange"
