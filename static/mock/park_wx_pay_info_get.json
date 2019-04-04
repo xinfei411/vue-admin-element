@@ -1,0 +1,16 @@
+{
+	"ret_code":"000000",
+	"ret_msg":"请求成功",
+	"ret_data":{
+		"park_wx_pay_info":[
+			{
+				"merchant_id": "wemust_mengzheng",
+				"wx_id":"wemust",
+				"wx_pay_type":"00",
+				"wx_mch_id":"15000001",
+				"wx_mch_api_key":"4234234AAAAAAABFCC34132,15000002",
+				"wx_sub_mch_id":"15000002"
+			}
+		]
+	}
+}

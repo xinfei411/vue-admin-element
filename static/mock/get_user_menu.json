@@ -5,7 +5,7 @@
       "menu": [
         {
           "id": "01",
-          "url": "/",
+          "url": "/a",
           "text": "系统设置",
           "icon": "el-icon-setting",
           "children": [
@@ -34,6 +34,50 @@
               "id": "0104",
               "url": "/dictionary",
               "text": "字典",
+              "icon": "",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "02",
+          "url": "/b",
+          "text": "系统管理",
+          "icon": "el-icon-setting",
+          "children": [
+            {
+              "id": "0201",
+              "url": "/merchantInfo",
+              "text": "商户管理",
+              "icon": "",
+              "children": []
+            },
+            {
+              "id": "0202",
+              "url": "/parkWxPayInfo",
+              "text": "商户清算管理",
+              "icon": "",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "03",
+          "url": "/c",
+          "text": "智慧停车",
+          "icon": "el-icon-setting",
+          "children": [
+            {
+              "id": "0301",
+              "url": "/parkCarBkym",
+              "text": "月租车管理",
+              "icon": "",
+              "children": []
+            },
+            {
+              "id": "0302",
+              "url": "/parkCarFlow",
+              "text": "流水查询",
               "icon": "",
               "children": []
             }

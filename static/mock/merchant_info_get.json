@@ -1,0 +1,15 @@
+{
+	"ret_code":"000000",
+	"ret_msg":"请求成功",
+	"ret_data":{
+		"merchant_info":[
+			{
+				"merchant_id": "wemust_mengzheng",
+				"merchant_name":"大厂蒙正文化停车场",
+				"type":"park",
+				"state":"00",
+				"fee_type":"00"
+			}
+		]
+	}
+}
