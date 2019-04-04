@@ -36,10 +36,15 @@ let CURD = {
         },
         //重置表单
         resetForm() {
-            let vm = this;
-            setTimeout(() => {
-                vm.$refs['form'].resetFields();
-            }, 0);
+            let vm = this,object=vm.form;
+            for (const key in object) {
+                if (object.hasOwnProperty(key)) {
+                    object[key]='';
+                }
+            }
+            // setTimeout(() => {
+            //     vm.$refs['form'].resetFields();
+            // }, 0);
             
         },
         //新增或者编辑
@@ -47,7 +52,7 @@ let CURD = {
             let vm = this;
             if (data) {
                 vm.dialogTitle = "编辑";
-                vm.form = data;
+                vm.form =JSON.parse(JSON.stringify(data));
             } else {
                 vm.resetForm();
                 vm.dialogTitle = "新增";
